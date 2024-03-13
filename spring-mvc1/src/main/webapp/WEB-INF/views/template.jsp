@@ -20,6 +20,13 @@
     <div class="panel-body">Panel Content</div>
     <div class="panel-footer"></div>
   </div>
+  <c:if test="${log eq null }">
+    <div onClick="location.href='loginForm.do'"> 로그인 </div>
+ 	 <div onClick="location.href='joinForm.do'"> 회원가입 </div>
+  </c:if>
+    <c:if test="${log ne null }">
+      <div onClick="location.href='logoutPro.do'"> 로그아웃 </div>
+  </c:if>
 </div>
 
 </body>
