@@ -11,9 +11,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
      <link rel="stylesheet" src="${cp}/resources/css/custom.css" >
-
+ <script defer src="${cp}/resources/js/modal.js"></script>
 </head>
-<body>
+<body onload="actionModal('${msgType}' ,'${msg}' )">
 <div class="container">
 <jsp:include page="common/header.jsp"/>      
   <div class="panel panel-default">
@@ -45,7 +45,7 @@
   </div>
 </div>
   
-	 
+ <jsp:include page="./common/msgModal.jsp"/> 	 
 </body>
 </html>
 
