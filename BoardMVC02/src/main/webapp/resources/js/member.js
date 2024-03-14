@@ -2,7 +2,7 @@
 let check = false;
 
 function registerCheck(cp) {
-/*
+
   let memID = document.getElementById('memID').value;
   if (!memID) {
     kindOfModal('panel-info');
@@ -32,9 +32,7 @@ function registerCheck(cp) {
     .catch((error) => {
       console.error('There was a problem with the fetch operation:', error);
     });
-  */
   
-  check = true;
 }
 
 function passwordCheck() {
@@ -51,7 +49,8 @@ function passwordCheck() {
 function goInsert() {
   let form = document.forms['frm'];
   if (form.memAge.value < 1 || form.memAge.value > 100) {
-    return alert(' 올바른 나이 입력해주세요 ');
+    alert(' 올바른 나이 입력해주세요 ');
+    return false;
   }
   if (check) {
     document.forms['frm'].submit();
@@ -64,6 +63,16 @@ function goInsert() {
 
 
 function goUpdate() {
-	// 실습
+	let form = document.forms['updateForm'];
+  if (form.memAge.value < 1 || form.memAge.value > 100) {
+    alert(' 올바른 나이 입력해주세요 ');
+    return false;
+  }
+  if (!form.memPassword1.value || !form.memPassword2.value) {
+  	changeMsg('비밀번호를 입력해주세요');
+  	showModal();
+    return false;
+  }
+	form.submit();
 }
   

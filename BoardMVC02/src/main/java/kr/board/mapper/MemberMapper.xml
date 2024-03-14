@@ -16,4 +16,10 @@
   <select id="registerCheck" resultType="kr.board.entity.Member">
     select * from members where memID=#{memID}
   </select>
+  
+  <update id="memUpdate" parameterType="kr.board.entity.Member">
+     update members set memPassword=#{memPassword}, memName=#{memName}, 
+            memAge=#{memAge},memGender=#{memGender},memEmail=#{memEmail} 
+            where memID=#{memID}      
+  </update>
 </mapper>

@@ -8,6 +8,7 @@ import kr.board.entity.Member;
 public interface MemberMapper {
 	
 	public Member memLogin(Member member);
-	public void register(Member member);
+	public int register(Member member);
 	public Member registerCheck(String memID);
+	public int memUpdate(Member member);
 }
